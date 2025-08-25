@@ -8,8 +8,7 @@ def main():
 
     shift1 = int (input("Please enter first shift number: "))
     shift2 = int (input("Please enter second shift number: "))
-
-    f = open ("raw_text.txt", "r")
+        
     key1 = shift1 * shift2
     key2 = - shift1 + - shift2
     key3 = - shift1
@@ -37,5 +36,6 @@ def verify():
 
 
 main()
+
 
 
