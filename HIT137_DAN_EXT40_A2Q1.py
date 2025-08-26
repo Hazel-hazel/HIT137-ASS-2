@@ -16,35 +16,30 @@ e_text = ""
     
 
 def main():
-
     """The main function of this program"""
-          
+        
+    """Show keys"""
+    print (key1, key2, key3, key4) # Test mode 
+   
     """Encrypt the raw_text"""
-    
-    encrypt()
-
-
-    """Test mode"""
-
-    print (key1, key2, key3, key4) # Test mode
+        encrypt()    
         
     print ("File encrypted!")
     print ("Encrypted text file saved.")
 
     """Decrypt the encrypted_text"""
-    
-    decrypt()
+        decrypt()
+
+    print ("File decrypted!")
+    print ("Decrypted text file saved.")
 
     """Compare decrypted_text"""
-    
-    verify()
-
+        verify()
 
 
     """Define functions"""
 
 def encrypt():
-
     """Function to encrypt the raw_txt file and save as encrypted_text.txt"""
 
     file_r = open ("raw_text.txt", "r")
@@ -53,7 +48,7 @@ def encrypt():
     e_text = ""
 
     for ch in raw_text:
-        echr = ord(ch) + key1
+        echr = ord(ch) + key2
         e_text = e_text + chr(echr)
 
     """ Test to compare input and output"""
@@ -69,28 +64,45 @@ def encrypt():
     return
 
 def decrypt():
-
     """Function to decrypt the encrypted_text file"""
 
+    file_e = open ("encrypted_text.txt", "r")
+    enc_text = file_e.read()
+
+    d_text = ""
+
+    for ech in enc_text:
+        echr = ord(ech) - key2
+        d_text = d_text + chr(echr)
+
+    """ Test to compare input and output"""
+    print (enc_text) # Test mode
+    print (d_text) # Test mode
+
+    """Save decrypted file"""
+    
+    file_d = open ("decrypted_text.txt", "w")
+    file_d.write (str(d_text))
+    file_d.close
     return
 
 def verify():
-
     """Function to verify the decrypted_text file matches the raw_text file """
 
     file_r = open ("raw_text.txt", "r")
     raw_text = file_r.read()
 
-    file_r = open ("encrypted_text.txt", "r")
-    e_file = file_r.read()
+    file_d = open ("decrypted_text.txt", "r")
+    d_file = file_d.read()
 
-    if raw_text == e_file:
+    if raw_text == d_file:
         print ("File verified!")
     else:
         print ("Verification error!")
     return
 
 main()
+
 
 
 
