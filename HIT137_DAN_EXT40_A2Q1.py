@@ -22,19 +22,19 @@ def main():
     print (key1, key2, key3, key4) # Test mode 
    
     """Encrypt the raw_text"""
-        encrypt()    
+    encrypt()    
         
     print ("File encrypted!")
     print ("Encrypted text file saved.")
 
     """Decrypt the encrypted_text"""
-        decrypt()
+    decrypt()
 
     print ("File decrypted!")
     print ("Decrypted text file saved.")
 
     """Compare decrypted_text"""
-        verify()
+    verify()
 
 
     """Define functions"""
@@ -102,6 +102,7 @@ def verify():
     return
 
 main()
+
 
 
 
