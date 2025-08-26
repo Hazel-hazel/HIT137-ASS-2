@@ -10,8 +10,10 @@ key1 = shift1 * shift2
 key2 = - shift1 + - shift2
 key3 = - shift1
 key4 = shift2 ** 2
+
+raw_text = ""
+e_text = ""
     
-print (key1, key2, key3, key4) # Test mode
 
 def main():
 
@@ -21,6 +23,14 @@ def main():
     
     encrypt()
 
+
+    """Test mode"""
+
+    print (key1, key2, key3, key4) # Test mode
+        
+    print ("File encrypted!")
+    print ("Encrypted text file saved.")
+
     """Decrypt the encrypted_text"""
     
     decrypt()
@@ -29,12 +39,16 @@ def main():
     
     verify()
 
+
+
+    """Define functions"""
+
 def encrypt():
 
-    """Function to encrypt the raw_txt file"""
+    """Function to encrypt the raw_txt file and save as encrypted_text.txt"""
 
-    f = open ("raw_text.txt", "r")
-    raw_text = f.read()
+    file_r = open ("raw_text.txt", "r")
+    raw_text = file_r.read()
 
     e_text = ""
 
@@ -42,14 +56,16 @@ def encrypt():
         echr = ord(ch) + key1
         e_text = e_text + chr(echr)
 
-    
-
-    print (key1, key2, key3, key4) # Test mode
-    print (key1) # Test mode
+    """ Test to compare input and output"""
     print (raw_text) # Test mode
     print (e_text) # Test mode
 
-        
+    """Save encrypted file"""
+    
+    file_e = open ("encrypted_text.txt", "w")
+    file_e.write (str(e_text))
+    file_e.close
+          
     return
 
 def decrypt():
@@ -62,9 +78,20 @@ def verify():
 
     """Function to verify the decrypted_text file matches the raw_text file """
 
+    file_r = open ("raw_text.txt", "r")
+    raw_text = file_r.read()
+
+    file_r = open ("encrypted_text.txt", "r")
+    e_file = file_r.read()
+
+    if raw_text == e_file:
+        print ("File verified!")
+    else:
+        print ("Verification error!")
     return
 
 main()
+
 
 
 
