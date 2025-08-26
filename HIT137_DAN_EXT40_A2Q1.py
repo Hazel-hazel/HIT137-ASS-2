@@ -36,7 +36,7 @@ def encrypt():
     f = open ("raw_text.txt", "r")
     raw_text = f.read()
 
-     e_text = ""
+    e_text = ""
 
     for ch in raw_text:
         echr = ord(ch) + key1
@@ -65,6 +65,7 @@ def verify():
     return
 
 main()
+
 
 
 
