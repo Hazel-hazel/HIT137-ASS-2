@@ -1,6 +1,13 @@
 """
 Hit137: Team Dan_Ext40
 Assessment 2: Question 1
+
+Program: Ass2_Q1.py
+Authors: Maharun Momo Islam, Moneya Islam, Andrew Morris, Kudzaishe Mutyasira
+Last date modified: 30/08/25
+
+The purpose of this program is to...
+
 """
 
 shift1 = int (input("Please enter first shift number: "))
@@ -102,6 +109,7 @@ def verify():
     return
 
 main()
+
 
 
 
