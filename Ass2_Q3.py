@@ -44,7 +44,7 @@ def thirds():
 """ Draws the polygon"""
 for i in range (sides):
    
-   """Example of depth one recursion, have to work out how to do it properly"""
+   """Example of depth 2 recursion, have to work out how to do it properly"""
 
    thirds()
    t.right (60)
@@ -59,3 +59,4 @@ for i in range (sides):
    t.right (360/sides)
 
 input ("Press any key to exit...") # Stops turtle window disappearing
+
