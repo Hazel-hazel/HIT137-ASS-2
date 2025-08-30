@@ -15,3 +15,31 @@ def month_to_season(m):  # converting months to seasons
     if m in (9,10,11):
         return "Spring" # sept , oct , nov = spring
     return None
+def safe_float(x):
+   # Try converting string x to a float.
+    #Returns (ok, value):
+      # ok=False if NaN or conversion fails
+      # ok=True if conversion successful
+    try:
+        v = float(x)
+        if math.isnan(v):
+            return False, 0.0
+        return True, v
+    except:
+        return False, 0.0
+
+def stddev(values):
+    
+    #Compute the population standard deviation for a list of values.
+    #Returns 0.0 if there are fewer than 2 values.
+    
+    n = len(values)
+    if n < 2:
+        return 0.0
+    mean = sum(values) / n
+    var = 0.0
+    for v in values:
+        diff = v - mean
+        var += diff * diff
+    var /= n  # population variance
+    return math.sqrt(var)
