@@ -26,6 +26,9 @@ def main():
     sides = int(input("Enter number of sides: "))
     length = int(input("Enter side length (pixels): "))
     depth = int(input("Enter recursion depth: "))
+    colour = (input("Enter a colour: "))
+    width = int(input("Enter a pen tip width: "))
+    
     R = length / (2* math.sin(math.pi / sides))  # Calculate radius of polygon
 
     screen = turtle.Screen()
@@ -37,7 +40,9 @@ def main():
     t.left (90+ (360 / (2 * sides))) # Set polygon vertex intercept angle
     t.forward(R) # Send turtle one polygon radius to start position 
     t.setheading(0) # Face turtle East
-    t.down () # Pen down, so it can draw 
+    t.down () # Pen down, so it can draw
+    t.pensize(width)  # Set width of pen tip
+    t.pencolor(colour)  # Set colour of pen 
 
     draw_polygon(t, sides, length, depth)
 
@@ -46,3 +51,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
