@@ -35,7 +35,7 @@ def main():
     t= turtle.Turtle ()
     t.speed(0)
 
-    t.pensize(2)  # Set width of pen tip
+    #t.pensize(2)  # Set width of pen tip
     t.up ()  # Pen up, so it doesn't draw while turtle is moved to start position
     t.left (90+ (360 / (2 * sides))) # Set polygon vertex intercept angle
     t.forward(R) # Send turtle one polygon radius to start position 
@@ -51,4 +51,5 @@ def main():
 if __name__ == "__main__":
 
     main()
+
 
