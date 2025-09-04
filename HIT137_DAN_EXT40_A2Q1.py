@@ -38,8 +38,7 @@ key4 = shift2 ** 2
 def main():
 
     """The main function of this program"""
-   
-    
+       
     encrypt()  # Encrypt raw_text.txt file
             
     print("File encrypted!")
@@ -179,7 +178,9 @@ def verify():
         print("Verification error!")
 
     
-main()
+if __name__ == "__main__":    
+    main()
+
 
 
 
