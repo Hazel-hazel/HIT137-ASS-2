@@ -1,10 +1,14 @@
 '''
-HIT137 Assignment 2
+Hit137: Team Dan_Ext40
 
-Team DAN_EXT40
-Members: Maharun Islam, Moneya Islam, Andrew Morris, Kudzaishe Mutyasira
+Assignment 2: Question 3
 
-Question 3 Program 
+Program: Ass2_Q1.py
+
+Authors: Maharun Momo Islam, Moneya Islam, Andrew Morris, Kudzaishe Mutyasira
+
+Last date modified: 05/09/25
+
     Explanation 
 The purpose of this program is to utilise Python's turtle graphics to generate a 
 geometric pattern through a recursive function. The pattern begins with a regular 
@@ -79,6 +83,7 @@ def draw_polygon(t, sides, length, depth):
 # Run program 
 if __name__ == "__main__":
     main()
+
 
 
 
