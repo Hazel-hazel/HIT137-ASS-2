@@ -3,11 +3,11 @@ Hit137: Team Dan_Ext40
 
 Assignment 2: Question 1
 
-Program: Ass2_Q1.py
+Program: HIT137_DAN_EXT40_A2Q1.py
 
 Authors: Maharun Momo Islam, Moneya Islam, Andrew Morris, Kudzaishe Mutyasira
 
-Last date modified: 04/09/25
+Last date modified: 05/09/25
 
 Encryption / Decryption:
 
@@ -91,10 +91,10 @@ def encrypt():
             key5 = key5 + "0"  # Add key number to key sequence (0 = no key)
 
     # Test mode
-    print (key1, key2, key3, key4)
-    print(raw_text)  
-    print(encrypted_text) 
-    print(key5)  
+    #print (key1, key2, key3, key4)
+    #print(raw_text)  
+    #print(encrypted_text) 
+    #print(key5)  
 
     # Save encrypted_text file    
     file_e = open("encrypted_text.txt", "w", encoding = "utf-8")  # encoding allows extended character range
@@ -153,7 +153,7 @@ def decrypt():
             key_sequence = key_sequence + 1  # Progress forward through key5 sequence  
     
     # Test mode
-    print(decrypted_text)  
+    #print(decrypted_text)  
     
     # Save decrypted text file    
     file_d = open("decrypted_text.txt", "w")
@@ -180,6 +180,7 @@ def verify():
     
 if __name__ == "__main__":    
     main()
+
 
 
 
