@@ -3,7 +3,7 @@ Hit137: Team Dan_Ext40
 
 Assignment 2: Question 3
 
-Program: Ass2_Q1.py
+Program: Assignment2Q3.py
 
 Authors: Maharun Momo Islam, Moneya Islam, Andrew Morris, Kudzaishe Mutyasira
 
@@ -83,6 +83,7 @@ def draw_polygon(t, sides, length, depth):
 # Run program 
 if __name__ == "__main__":
     main()
+
 
 
 
