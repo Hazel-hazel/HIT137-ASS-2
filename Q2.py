@@ -3,7 +3,7 @@ Hit137: DAN_EXT40
 
 Assignment 2: Ouestion 2
 
-Program: O2.py
+Program: Q2.py
 
 Auhors: Maharun Momo Islam, Moneya Islam, Andrew Morris, Kudzaishe Mutyasira
 
