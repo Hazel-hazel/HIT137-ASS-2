@@ -12,10 +12,11 @@ polygon and recursively modifies each edge according to the given parameters to 
 an intricate design.
 
 The program will ask for the following characteristics to be specified:
-    - the number of sides: which determines the initial polygon,
-    - the side length: the length of each edge of the initial polygon (in pixels) and
-    - recursion depth: this is how many times the pattern rules will be applied. 
-
+    - The number of sides: which determines the initial polygon.
+    - The side length: the length of each edge of the initial polygon (in pixels). 
+    - Recursion depth: this is how many times the pattern rules will be applied. 
+    - The pen colour and tip width.
+    
 Of the specified shape, each edge will be divided into three equal sections, of which 
 the middle will be replaced. In its place will be two sides of an equilateral triangle, 
 pointed inwards, creating an 'indentation'. This transforms one straight edge into four 
@@ -39,7 +40,7 @@ def main():
 
     screen = turtle.Screen() # Creates a drawing window 
     t= turtle.Turtle () #Creates a turtle pen
-    t.speed(0) # DEfines drawing speed (fastest used) 
+    t.speed(0) # Defines drawing speed (fastest used) 
 
     t.up ()  # Pen up, so it doesn't draw while turtle is moved to start position
     t.left (90+ (360 / (2 * sides))) # Set polygon vertex intercept angle
@@ -78,6 +79,7 @@ def draw_polygon(t, sides, length, depth):
 # Run program 
 if __name__ == "__main__":
     main()
+
 
 
 
