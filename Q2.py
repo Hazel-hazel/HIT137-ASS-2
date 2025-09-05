@@ -7,6 +7,7 @@ Program: Q2.py
 
 Auhors: Maharun Momo Islam, Moneya Islam, Andrew Morris, Kudzaishe Mutyasira
 
+Last date modified: 05/09/25
 
 This program analyses Australian temperature data collected from mutliple
 weather stations across multiple years. it processes all .csv files located in 
