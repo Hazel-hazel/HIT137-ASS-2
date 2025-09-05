@@ -1,4 +1,21 @@
-# Q2.py  — Temperature for CSVs (months as columns)
+"""
+Hit137: DAN_EXT40
+
+Assignment 2: Ouestion 2
+
+Program: O2.py
+
+Auhors: Maharun Momo Islam, Moneya Islam, Andrew Morris, Kudzaishe Mutyasira
+
+
+This program analyses Australian temperature data collected from mutliple
+weather stations across multiple years. it processes all .csv files located in 
+the 'temperatures' folder, ignores missing values (NaN) and computes:
+- seasonal averages saved to 'average_temp.txt'
+- largest temperature range saved to 'largest_temp_range_station.txt'
+- temperature stability saved to 'temperature_stability_stations.txt'
+
+"""
 
 import os, csv, math  # Importing temp folder
 
@@ -63,6 +80,7 @@ def load_temperatures(folder="temperatures"):
     month_to_values = {i+1: [] for i in range(12)}  
 
     STATION_KEY = "STATION_NAME"
+  # Loop through each file in the folder
 
     for fname in os.listdir(folder):
         if not fname.lower().endswith(".csv"):
@@ -90,13 +108,15 @@ def load_temperatures(folder="temperatures"):
 
     return station_to_values, month_to_values
 
-
+ # computes avg temp. writes results in txt file
 def write_season_averages(month_to_values, out="average_temp.txt"):
     seasons = {"Summer": [], "Autumn": [], "Winter": [], "Spring": []}
+       # Group values into seasons
     for m, vals in month_to_values.items():
         s = month_to_season(m)
         if s:
             seasons[s].extend(vals)
+           # output file
     with open(out, "w", encoding="utf-8") as f:
         for s in ["Summer","Autumn","Winter","Spring"]:
             if seasons[s]:
@@ -105,7 +125,7 @@ def write_season_averages(month_to_values, out="average_temp.txt"):
             else:
                 f.write(f"{s}: n/a\n")
 
-
+ # largest tenp range writes into txt file
 def write_largest_range(station_to_values, out="largest_temp_range_station.txt"):
     best, max_range = [], -1.0
     meta = {}
@@ -126,7 +146,7 @@ def write_largest_range(station_to_values, out="largest_temp_range_station.txt")
             r, mx, mn = meta[st]
             f.write(f"{st}: Range {r:.1f}°C (Max: {mx:.1f}°C, Min: {mn:.1f}°C)\n")
 
-
+# computes standard deviation 
 def write_stability(station_to_values, out="temperature_stability_stations.txt"):
     stds = {st: stddev(vals) for st, vals in station_to_values.items() if vals}
     if not stds:
@@ -134,6 +154,7 @@ def write_stability(station_to_values, out="temperature_stability_stations.txt")
             f.write("No data\n")
         return
     min_std = min(stds.values()); max_std = max(stds.values())
+    #identifies for most stable
     most_stable   = [st for st, s in stds.items() if abs(s - min_std) < 1e-12]
     most_variable = [st for st, s in stds.items() if abs(s - max_std) < 1e-12]
     with open(out, "w", encoding="utf-8") as f:
